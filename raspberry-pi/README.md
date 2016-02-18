@@ -15,14 +15,28 @@
 
 Plug the Arduino into the Raspberry Pi with USB.
 
-Install the Arduino IDE
+### Raspberry Pi set up
+- Install the OS
+  - Follow instructions on their Downloads page: https://www.raspberrypi.org/downloads/
+  - I found that our Raspberry Pi B only works best with Raspbian Wheezy or
+    Jessie lite.
+
+
+#### Software and updates
+- Update the OS with `sudo apt-get update` and `sudo apt-get upgrade`
+- Set time and date with `sudo dpkg-reconfigure tzdata` and then restart the Pi
+- Install the Arduino IDE with `sudo apt-get install arduino`
+- Install Python's serial library
+
+### Optional
+- Install Node.js, for using the Johnny-five JavaScript framework
+  - Find the latest node version at 
 
 ```
-sudo apt-get install arduino
-```
-
-Install Python's serial library
-
+$ wget http://nodejs.org/dist/v0.12.2/node-v0.12.2.tar.gz
+$ tar xvzf node-v0.12.2.tar.gz
+$ cd node-v0.12.2
+``` 
 ## Code
 
 
