@@ -77,6 +77,23 @@ void loop()
 To capture the temperature in a file on the Raspberry Pi, use the code in the
 tempsensor.py file.
 
+```python
+# Call with three arguments
+# 1 = port
+# 2 = Baudrate
+# 3 = output file name
+# ex: python tempsensor.py /dev/ttyACM0 9600 readings.csv
+
+import serial, sys, datetime
+
+
+with open(sys.argv[3], "w") as f:
+  with serial.Serial(port=sys.argv[1], baudrate=sys.argv[2]) as ser:
+    if ser.isOpen():
+      ser.readline()
+    while ser.isOpen():
+      f.write('{}, {}'.format(datetime.datetime.now().strftime('%c'), ser.readline()))
+```
 To run this code, type:
 
 ```bash
@@ -85,6 +102,23 @@ python tempsensor.py /dev/ttyACM0 9600 temp-readings.csv
 
 To send the sensor data to your Adafruit IO account, use the code in the
 adafruit.py file.
+
+```python
+from Adafruit_IO import *
+import serial, sys
+
+# Adafruit IO Key, read it from a file named aio-key
+with open ("aio-key", "r") as keyfile:
+    aiokey = keyfile.read().strip()
+
+aio = Client(aiokey)
+
+with serial.Serial(port=sys.argv[1], baudrate=sys.argv[2]) as ser:
+    if ser.isOpen():
+        ser.readline()
+    while ser.isOpen():
+        aio.send('Foo', ser.readline())
+```
 
 To run this code, type:
 
