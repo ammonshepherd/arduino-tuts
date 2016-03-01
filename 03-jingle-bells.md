@@ -3,6 +3,10 @@
 This tutorial connects a piezo buzzer to the Arduino to make a sound. With some
 code, you can create music.
 
+## Physical Setup
+
+![led-blink](images/piezo.png)
+
 ## Introduction
 
 The text below comes from the SparkFun Inventor's Kit.
@@ -66,10 +70,6 @@ and returns the corresponding frequency from this table:
 
 For more information, see http://arduino.cc/en/Tutorial/Tone
 ```
-
-## Physical Setup
-
-![led-blink](images/piezo.png)
 
 ## Code
 ```c
