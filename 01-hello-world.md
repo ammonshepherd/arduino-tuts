@@ -7,9 +7,12 @@ statements, etc.
 
 A comparable example for Arduinos is making an LED blink. 
 
-## Setup
+## Hardware
 
-### Physical set up.
+- Arduino
+- LED
+
+## Physical set up.
 
 - Connect the Arduino to your computer via the USB cable.
 - Plug the LED into the GND and 13 pins. The long wire should go into the hole labeled 13.
@@ -18,7 +21,7 @@ A comparable example for Arduinos is making an LED blink.
 
 (image source: https://github.com/rwaldron/johnny-five)
 
-### Code
+## Code
 
 - Open the Arduino IDE and create a new sketch (File->New)
 - It should be populated with this basic code already:

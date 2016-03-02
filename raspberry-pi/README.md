@@ -28,15 +28,6 @@ Plug the Arduino into the Raspberry Pi with USB.
 - Install the Arduino IDE with `sudo apt-get install arduino`
 - Install Python's serial library
 
-### Optional
-- Install Node.js, for using the Johnny-five JavaScript framework
-  - Find the latest node version at 
-
-```
-$ wget http://nodejs.org/dist/v0.12.2/node-v0.12.2.tar.gz
-$ tar xvzf node-v0.12.2.tar.gz
-$ cd node-v0.12.2
-``` 
 ## Code
 
 

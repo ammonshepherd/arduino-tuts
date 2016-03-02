@@ -1,6 +1,12 @@
 # Get the temperature
 
-## Setup
+## Hardware
+
+- Arduino
+- TMP36 temperature sensor
+- Wires
+
+## Physical Setup
 
 ![temperature](images/temperature-tmp36.png)
 

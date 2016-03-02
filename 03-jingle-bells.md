@@ -3,6 +3,12 @@
 This tutorial connects a piezo buzzer to the Arduino to make a sound. With some
 code, you can create music.
 
+## Hardware
+
+- Arduino
+- Piezo buzzer
+- wires
+
 ## Physical Setup
 
 ![led-blink](images/piezo.png)
