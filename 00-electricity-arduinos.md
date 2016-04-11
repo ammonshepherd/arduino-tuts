@@ -45,7 +45,7 @@
 
 ### Loading Sparkfun SIK Code
 
-- Download from https://www.sparkfun/sikcode
+- Download from https://www.sparkfun.com/sikcode
 
 
 # Circuit Experiments
