@@ -65,6 +65,7 @@ void loop()
 
 ### Python Code
 
+#### Capture on Rasberry Pi
 To capture the temperature in a file on the Raspberry Pi, use the code in the
 tempsensor.py file.
 
@@ -90,6 +91,8 @@ To run this code, type:
 ```bash
 python tempsensor.py /dev/ttyACM0 9600 temp-readings.csv
 ```
+
+#### Send to web service
 
 To send the sensor data to your Adafruit IO account, use the code in the
 adafruit.py file.
