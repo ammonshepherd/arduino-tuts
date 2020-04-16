@@ -1,3 +1,4 @@
+![Arduino to Processing](arduino-to-processing.png)
 # Super Basic Arduino to Processing and Back again
 
 Many of the tutorials out there have lots of unnecessary code and don't explain the basics of connecting the Arduino to Processing very well. This hopes to make it super simple.
