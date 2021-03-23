@@ -37,6 +37,7 @@ void loop() {
   // If the angle is between 0 and 180, then we can change it. 
   // Otherwise it would go too far in either direction.
   if ( (angle > -1) && (angle < 181) ) {
+    
     //If the left button is pushed (causing a state of LOW), move the motor 10 degree positive
     if (lbState == LOW) {
       myservo.write(angle + 10);

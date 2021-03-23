@@ -4,9 +4,23 @@ This tutorial creates a circuit with two buttons and a servo motor.
 
 The buttons control the servo motor by moving it clockwise or counterclockwise.
 
+# Concepts
+
+* pull-up resistor
+* buttons
+* servo motor
+* importing libraries
+* creating objects in programming
+*
+
 # Circuit
 ![Button Servo Mover Circuit](button-servo-mover.jpg)
 
+* Two buttons are connected to two pins on the Arduino.
+  * Right Button
+    * A wire is connecting the right side of the right button and is plugged into pin 4 on the Arduino
+  * Left Button
+    * A wire is connecting the left side of the left button and is plugged into pin 2 on the Arduino
 
 # Code
 
