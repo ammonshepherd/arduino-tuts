@@ -10,14 +10,15 @@ Motor and sensor code altered from
 
 
 ## Components
-- 1x Arduino Uno R3 + USB A-to-B Cable
-- 1x Breadboard 12x Jumper Wires
-- 1x DC Motor
-- 1x 330Ω Resistor
-- 1x NPN transistor
-- 1x Diode 1N4148
-- 1x HC-SR04 ultrasonic distance sensor
-- 1x computer to connect the Arduino to with the Arduino IDE software installed (https://www.arduino.cc/en/software)
+- 1 -  Arduino Uno R3 + USB A-to-B Cable
+- 1 -  Breadboard 
+- 12 - Jumper Wires
+- 1 -  DC Motor
+- 1 -  330Ω Resistor
+- 1 -  NPN transistor
+- 1 -  Diode 1N4148
+- 1 -  HC-SR04 ultrasonic distance sensor
+- 1 -  computer to connect the Arduino to with the Arduino IDE software installed (https://www.arduino.cc/en/software)
 
 ## Wiring Diagram
 ![wiring diagram](distance-sensor-motor.png)
