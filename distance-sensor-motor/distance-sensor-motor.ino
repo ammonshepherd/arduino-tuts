@@ -9,24 +9,26 @@
  *  Components needed:
  *  1 - Arduino Uno R3 + USB A-to-B Cable
  *  1 - Breadboard 
- *  12 - Jumper Wires
+ *  10 - Jumper Wires
  *  1 - DC Motor
- *  1 - 330Ω Resistor
+ *  2 - 330Ω Resistor
+ *  1 - LED (any color)
  *  1 - NPN transistor
  *  1 - Diode 1N4148
  *  1 - HC-SR04 ultrasonic distance sensor
  *  1 - computer to connect the Arduino to with the Arduino IDE software installed (https://www.arduino.cc/en/software)
  *  
  *  Wiring Diagram:
- *  
+ *  https://github.com/ammonshepherd/arduino-tuts/tree/master/distance-sensor-motor
  *  
  *  Author: Ammon Shepherd
- *  Date: 12 April 2021
+ *  Date: 13 April 2021
 ********************************* */
 
-const int motorPin = 9;
+const int motorPin = 6;
 const int trigPin = 11;
 const int echoPin = 12;
+const int ledPin = 8;
 
 float distance = 0;
 
@@ -35,8 +37,11 @@ void setup() {
   Serial.begin(9600);
   
   pinMode(motorPin, OUTPUT);
+  
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
@@ -45,10 +50,11 @@ void loop() {
   distance = getDistance();
 
   Serial.print(distance);
-  Serial.println(" cm");
+  // Serial.println(" in"); // Uncomment for inches
+  Serial.println(" cm"); // Uncomment for centimeters
 
-  
-  speed = map(distance, 0, 300, 100, 255);
+  //speed = map(distance, 0, 15, 0, 255); // Uncomment for inches
+  speed = map(distance, 0, 50, 100, 255); // Uncomment for centimeters
   speed = constrain(speed, 100, 255);
 
   Serial.print("speed: ");
@@ -56,7 +62,7 @@ void loop() {
 
   analogWrite(motorPin, speed);
 
-  delay(1500);
+  delay(500);
 }
 
 
@@ -64,17 +70,20 @@ float getDistance() {
   float echoTime;
   float calculatedDistance;
 
-  //send out 10ms ultrasonic pulse
+  // Make sure transmission pin is turned off first
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
+  
+  //send out 10ms ultrasonic pulse
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
   echoTime = pulseIn(echoPin, HIGH);
 
-  //half the bounce time multiplied by the speed of sound
-  calculatedDistance = (echoTime / 2) / 29.1;
+  //half the bounce time multiplied by the speed of sound 
+  //calculatedDistance = echoTime / 148.0; // Uncomment for inches
+  calculatedDistance = echoTime / 58.2; // Uncomment for centimeters
 
   return calculatedDistance;
 }
