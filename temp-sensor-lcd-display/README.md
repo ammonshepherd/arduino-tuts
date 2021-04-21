@@ -44,6 +44,9 @@ results and install the "Adafruit Unified Sensor" library.
 ### DHT11 & LCD
 ![DHT11 & LCD wiring diagram](DHT11-lcd-circuit.png)
 
+The resistor connecting pin 15 on the LCD to VCC (positive) is optional. The
+higher the resistance the dimmer the background light on the LCD.
+
 
 ## Code
 - DHT11 sensor
