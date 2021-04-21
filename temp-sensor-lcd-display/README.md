@@ -18,13 +18,16 @@ This tutorial will help you put together a temperature and humidity sensor
 This circuit requires the DHT11 library and the Unified Sensor library from
 Adafruit. To install the libraries, go to the Sketch menu, then Include
 Library, then Manage Libraries.
+
 ![Manage Libraries](manage-libraries.png)
 
 Search for "dht11" and install the library created by Adafruit.
+
 ![Adafruit DHT11 library](dht11-library.png)
 
 Then, search for "adafruit unified sensor" and scroll to the bottom of the
 results and install the "Adafruit Unified Sensor" library.
+
 ![Adafruit Unified Sensor library](unified-sensor-library.png)
 
 ### Documentation
