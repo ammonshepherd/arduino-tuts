@@ -43,6 +43,8 @@ All you need to do on the Arduino side is send something to serial using the Ser
 
 ## Basic Processing Code
 
+[The Processing Code](processingFromArduino/processingFromArduino.pde)
+
 Processing requires a couple more lines of code to read in the serial port data.
 
 ```java
@@ -78,11 +80,13 @@ myPort = new Serial(this, Serial.list()[1], 9600);
 ```
 - This line fills the empty object with some default data. 
   - `this` is a programming trick for an object to refer to itself. 
-  - `Serial.list()[1]` calls the list method from the Serial library. 
+  - `Serial.list()[1]` calls the list method from the Serial library and
+    selects the second value from the array. See the note about `Serial.list()`
+    below.
   - 9600 is the baud rate. It must be set to the same frequency in Processing and
     Arduino.
  
-The result of `Serial.list()` is an array of the different serial ports on your
+Note: The result of `Serial.list()` is an array of the different serial ports on your
 computer. `[1]` is the index from that list that we want to use. To find which
 serial port the Arduino is connected to, you can run this sketch but uncomment
 the `printArray(Serial.list());` line. The results are displayed in the Console
