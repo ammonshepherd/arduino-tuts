@@ -19,6 +19,8 @@ graphical interface created in Processing. For example:
 
 ## Basic Processing Code
 
+[The basic Processing code](processingToArduino/processingToArduino.pde)
+
 ```java
 import processing.serial.*;
 
@@ -94,10 +96,13 @@ but it's much more fun to build a circuit. :)
 Connect the negative lead of an LED to GND on the Arduino. Then connect the
 positive lead of the LED to pin 13 on the Arduino.
 
-![One LED](oneLED.png)
+![One LED](oneLED.jpg)
+
 Real life circuit
 
 ### Basic Code
+
+[The basic Arduino code](arduinoFromProcessing/arduinoFromProcessing.ino)
 ```c++
 char val;
 int LED = 13;
