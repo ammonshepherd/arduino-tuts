@@ -1,5 +1,5 @@
 # Arduino to Processing
-![Arduino to Processing](arduino-processing.png)
+![Arduino to Processing](resources/arduino-processing.png)
 
 The basic concept is that we are sending information from the Arduino, through
 the serial port on your computer (which the USB is connected to).
@@ -100,7 +100,7 @@ println(myPort.readStringUntil('\n'));
 ```
 - This line will print the data from the serial port to the console in the Processing IDE. It should print out "Hello, Processing!" which was sent from Arduino!
 
-![Processing showing text sent from Arduino](processing.gif)
+![Processing showing text sent from Arduino](resources/processing.gif)
 
 This is super basic, and will do the job. See [Arduino to Processing with a
 Photoresistor](arduino-to-processing-photoresistor.md) for adding more functionality.
