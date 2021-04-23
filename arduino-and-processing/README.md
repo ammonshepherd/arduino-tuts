@@ -23,4 +23,4 @@ Arduino.
 
 And a slightly more advanced example of sending data from Processing to Arduino.
 
-- [Processing to Arduino with 5 LEDs](processing-to-arudino-5-leds.md)
+- [Processing to Arduino with 5 LEDs](processing-to-arduino-5-leds.md)
