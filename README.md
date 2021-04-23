@@ -8,7 +8,7 @@ various sensors and physical components.
 - [03 - Piezo buzzer](03-jingle-bells.md)
 - [04 - Potentiometer and motor](04-potentiometer-motor.md)
 - [05 - Photoresistor and motor](05-photoresistor-servo.md) 
-- [06 - Button and servo](button-servo-motor)
+- [06 - Button and servo](button-servo-mover)
 - [07 - Distance sensor and motor](distance-sensor-motor)
 - [08 - DHT11 sensor and LCD](temp-sensor-lcd-display)
 - [09 - Arduino and Processing](arduino-and-processing)
@@ -24,12 +24,12 @@ All tutorials follow this basic set up.
 - an LED, temperature sensor, light sensor, switches, diodes, dc motors, servos, LCD, etc.
 
 Many kits exist for sale that contain all of these components:
-- Elegoo kit ($36.99): https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4
-- Adafruit kit ($49.50): https://www.adafruit.com/products/193
-- Sparkfun kit ($49.95): https://www.sparkfun.com/products/13160
+- Elegoo kit: [https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4 ](https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4)
+- Adafruit kit: [https://www.adafruit.com/products/193 ](https://www.adafruit.com/products/193)
+- Sparkfun kit: [https://www.sparkfun.com/products/13160 ](https://www.sparkfun.com/products/13160)
 
 
 ## Software
 
-- Arduino IDE: https://www.arduino.cc/en/software
+- Arduino IDE: [https://www.arduino.cc/en/software ](https://www.arduino.cc/en/software)
 
