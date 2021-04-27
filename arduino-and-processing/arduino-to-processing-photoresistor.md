@@ -12,7 +12,7 @@ This is a bit more advanced tutorial than the [Arduino to Processing](arduino-to
 
 ## Circuit Diagram
 
-!(Photoresistor diagram)[resources/photoresistor.png]
+![Photoresistor diagram](resources/photoresistor.png)
 
 Connect one end of the photoresistor to 5V on the Arduino.
 Connect the other end of the photoresistor to analog pin 0, AO, on the Arduino.
@@ -136,4 +136,4 @@ IMPORTANT! The data coming from the serial port is a String. In order to use it 
 
 Now, if you run the Processing script and cover up the photoresistor, the circle will shrink and turn blue!
 
-![Circle changed by Photoresistor](processingPhotoresistorCircle.gif)
+![Circle changed by Photoresistor](resources/processingPhotoresistorCircle.gif)
