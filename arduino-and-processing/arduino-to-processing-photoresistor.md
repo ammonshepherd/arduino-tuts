@@ -1,7 +1,6 @@
 # Arduino to Processing with a Photoresistor
 
-![Arduino Photoresistor Circuit](resources/arduino-photoresistor.jpg)
-
+![Arduino to Processing](resources/arduino-processing.png)
 This is a bit more advanced tutorial than the [Arduino to Processing](arduino-to-processing.md) tutorial. This adds a circuit with a photoresistor to send "real world" data to Processing.
 
 ## Circuit Components
@@ -18,6 +17,8 @@ Connect one end of the photoresistor to 5V on the Arduino.
 Connect the other end of the photoresistor to analog pin 0, AO, on the Arduino.
 Connect the end of the photoresistor connected to pin A0 to one side of a 10K Ohm resistor.
 Connect the other end of the 10K Ohm resistor to ground, GND, on the Arduino.
+
+![Arduino Photoresistor Circuit](resources/arduino-photoresistor.jpg)
 
 The 10K Ohm resistor acts as a pull down resistor in this circuit. What and why a pull down resistor?
 
