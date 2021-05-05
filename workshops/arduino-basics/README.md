@@ -29,4 +29,4 @@ This resource contains:
 - 1 photoresistor
 - 1 breadboard
 - Computer with Arduino IDE installed, or using the web based IDE
-  - https://create.arduino.cc/editor
+  - [https://create.arduino.cc/editor](https://create.arduino.cc/editor)

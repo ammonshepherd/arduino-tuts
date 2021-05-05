@@ -37,4 +37,4 @@ Many kits exist for sale that contain all of these components:
 
 Here are resources for teaching workshops using the Arduino.
 
-[Arduino Basices - build a nightlight](workshops/arduino-basics/README.md)
+[Arduino Basics - build a nightlight](workshops/arduino-basics/README.md)
