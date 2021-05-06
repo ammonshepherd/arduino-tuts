@@ -73,7 +73,7 @@ float getDistance() {
 }
 ```
 
-We need to combine the sensor data into one "output", so we print the first sensor value, then a comma, then the second sensor value with the new line character to end the "output".
+We need to combine the sensor data into one "data packet", so we print the first sensor value, then a comma, then the second sensor value with the new line character to end the "data packet".
 
 ```c++
   Serial.print(distance);
@@ -84,6 +84,32 @@ We need to combine the sensor data into one "output", so we print the first sens
 The output will now look like this: `42.42,42`
 Two values separated by a comma.
 
+You can add more values to this pattern if you have more sensors. Three data points would be
+
+```c++
+  Serial.print(serialValues);
+  Serial.print(',');
+  Serial.print(distance);
+  Serial.print(',');
+  Serial.println( analogRead(0) );
+```
+
+This could send a data packet like this: `24,42.42,84`
+
+You can even send text.
+
+```c++
+  Serial.print(serialValues);
+  Serial.print(',');
+  Serial.print(distance);
+  Serial.print(',');
+  Serial.print("dolphins");
+  Serial.print(',');
+  Serial.println( analogRead(0) );
+```
+
+This would send values like this: `28,61.16,dolphins,832`
+
 ## Processing Code
 
 ```java
@@ -91,8 +117,8 @@ import processing.serial.*;
 
 Serial serialObject;
 
-// Instantiate here so it is accesible in multiple functions
-String sensorValue;
+// Instantiate here so it is accessible in multiple functions
+String serialValues;
 
 void setup() {
   size(640, 360);
@@ -101,8 +127,8 @@ void setup() {
 }
 
 void draw() {
-  // Split the sensorValues into a String array
-  String[] vals = splitTokens(sensorValue, ",");
+  // Split the serialValuess into a String array
+  String[] vals = splitTokens(serialValues, ",");
   // Strings are easiest to convert to floats
   float distance = float(vals[0]);
   float light = float(vals[1]);
@@ -112,31 +138,31 @@ void draw() {
   strokeWeight(2);
 
   // map(<current value from sensor>, <lowest value from sensor>, <highest value from sensor>, <lowest color value>, <highest color value>)
-  float mappedLight = map(light, 100, 800, 0, 255);
+  float mappedLight = map(light, 350, 870, 0, 255);
   fill(mappedLight, 100, 180);
 
-  float mappedDistance = map(distance, 0, 40, 0, 300);
-  mappedDistance = constrain(mappedDistance, 0, 300);
+  float mappedDistance = map(distance, 0, 40, 10, 300);
+  mappedDistance = constrain(mappedDistance, 10, 300);
   ellipse(320, 180, mappedDistance, mappedDistance);
 }
 
 void serialEvent(Serial p) {
-  sensorValue = p.readString();
+  serialValues = p.readString();
 }
 ```
 
-The data coming from the serial port is the data type String. It comes in as two numbers separated by a comma.
+The data coming from the serial port is the data type String. It comes in as two numbers separated by a comma. The Processing function `serialEvent()` takes care of listening to the serial port and putting the data in the serialValues variable.
 
 ```java
   void serialEvent(Serial p) {
-    sensorValue = p.readString();
+    serialValues = p.readString();
   }
 ```
 
-We first need to split this data into two separate variables. The easiest way to do this is to use a built in function `splitTokens()` which converts each element separated by the given delimiter into an element of a String array.
+We first need to split this data into two separate variables. The easiest way to do this is to use a built in function `splitTokens()` which converts each element separated by the given delimiter into an item of a String array.
 
 ```java
-  String[] vals = splitTokens(sensorValue, ",");
+  String[] vals = splitTokens(serialValues, ",");
 ```
 
 We need the values to be an integer or a float, so we convert each array element into a float, and store it in a new float variable for ease of use.
@@ -145,3 +171,38 @@ We need the values to be an integer or a float, so we convert each array element
   float distance = float(vals[0]);
   float light = float(vals[1]);
 ```
+
+If the Arduino code passed in four data points separated by commas, like this: `28,dolphins,42.04,579`
+
+Then we could access each item after splitting like so (remember, array indexes start with 0):
+
+- `vals[0]` has the value of `28`
+- `vals[1]` has the value of `dolphins`
+- `vals[2]` has the value of `42.04`
+- `vals[3]` has the value of `579`
+
+So we could turn these into variables like so:
+
+```java
+float temperature = float(vals[0]);
+String animal = float(vals[1]);
+float distance = float(vals[2]);
+float light = float(vals[3]);
+```
+
+Next we map the light value to fit within the range 0 to 255. You should change the second and third elements in the map function (here it's the `350` and `870` values) based on the lowest and highest values from the photoresistor. It is easiest to see these values from Arduino's Serial Monitor. Cover the photoresistor to get the lowest value, and leave uncovered to get the highest.
+
+```java
+  float mappedLight = map(light, 350, 870, 0, 255);
+  fill(mappedLight, 100, 180);
+```
+
+And then we map the distance value to fit within the range 10 to 300. This range is the size of the circle. You should change the second and third elements in the map function (here it's the `0` and `40` values) based on the lowest and highest values from the distance sensor. It is easiest to see these values from Arduino's Serial Monitor.
+
+```java
+  float mappedDistance = map(distance, 0, 40, 10, 300);
+  mappedDistance = constrain(mappedDistance, 10, 300);
+  ellipse(320, 180, mappedDistance, mappedDistance);
+```
+
+The line with the `constrain()` function restricts the values to be between 10 and 300. The map function allows for values greater than 300 or less than 10 if the value of `distance` is out of the range 0 to 40. The `constrain()` function constrains any value greater than 300 to be 300 and anything less than 10 to be 10.
