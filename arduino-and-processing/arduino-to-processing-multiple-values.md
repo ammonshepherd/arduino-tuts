@@ -1,12 +1,12 @@
 # Arduino to Processing - Sending Multiple Values
 
-![Arduino to Processing](arduino-processing.png)
+![Arduino to Processing](resources/arduino-processing.png)
 
 Let's say you have a circuit with multiple sensors and you want to send all of that data to processing.
 
 Let's use a distance sensor and a photoresistor.
 
-![Photograph of Photoresistor and Distance Sensor Circuit](photoresistor-distance-sensor.jpg)
+![Photograph of Photoresistor and Distance Sensor Circuit](resources/photoresistor-distance-sensor.jpg)
 
 ## Circuit Components
 
@@ -18,7 +18,7 @@ Let's use a distance sensor and a photoresistor.
 
 ## Circuit Diagram
 
-![Photoresistor and Distance Sensor Circuit](resources/photoresistor-distance-sensor.png)
+![Photoresistor and Distance Sensor Circuit](resources/photresistor-distance-sensor.png)
 
 ## Arduino Code
 
