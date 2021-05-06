@@ -1,6 +1,7 @@
 # Arduino to Processing with a Photoresistor
 
 ![Arduino to Processing](resources/arduino-processing.png)
+
 This is a bit more advanced tutorial than the [Arduino to Processing](arduino-to-processing.md) tutorial. This adds a circuit with a photoresistor to send "real world" data to Processing.
 
 ## Circuit Components
@@ -20,9 +21,13 @@ Connect the other end of the 10K Ohm resistor to ground, GND, on the Arduino.
 
 ![Arduino Photoresistor Circuit](resources/arduino-photoresistor.jpg)
 
-The 10K Ohm resistor acts as a pull down resistor in this circuit. What and why a pull down resistor?
+The 10K Ohm resistor acts as a voltage divider. Why is this needed?
 
-> When creating a circuit, we often want a pin to register as ON or OFF. Any given circuit, especially those built with a microprocessor like the Arduino, are subject to ambient frequencies from the electronics around you. This means that the pins on the Arduino are never really in a state of ON or OFF, but fluctuate between the two. This has to do with how the microprocessor on the Arduino evaluates what is considered ON or OFF. Voltage on the pins is not quite exactly 0 or 5, but can fluctuate. So the processor has a range that it considers ON and a range that it considers OFF. Without a pull up or pull down resistor in place, a circuit is susceptible to ambient frequencies which cause the pins in your circuit to register voltage that can trigger ON or OFF when not expected. Adding a resistor to the circuit, usually 2K to 10K Ohms, pulls down or pulls up the voltage on the pin so that the ambient frequencies no longer create an issue.
+> Analog to Digital Conversion
+> The world we live in is analog, but the Arduino lives in a digital world. In order to have the Arduino sense analog signals, we must first pass them through an Analog to Digital Converter (or ADC). The six analog inputs (A0--A5) covered in the last circuit all use an ADC. These pins "sample" the analog signal and create a digital signal for the microcontroller to interpret. The "resolution" of this signal is based on the resolution of the ADC. In the case of the Arduino, that resolution is 10-bit. With a 10-bit ADC, we get 2 ^ 10 = 1024 possible values, which is why the analog signal varies between 0 and 1023.
+> Voltage Divider Continued
+> Since the Arduino can’t directly interpret resistance (rather, it reads voltage), we need to use a voltage divider to use our photoresistor, a part that doesn't output voltage. The resistance of the photoresistor changes as it gets darker or lighter. That changes the amount of voltage that is read on the analog pin, which "divides" the voltage, 5V in this case. That divided voltage is then read on the analog to digital converter.
+> https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/circuit-1c-photoresistor
 
 ## Arduino code
 
