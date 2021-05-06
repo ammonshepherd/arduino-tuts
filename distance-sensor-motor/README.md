@@ -29,8 +29,8 @@ Motor and sensor code altered from
 
 ```c++
 const int motorPin = 6;
-const int trigPin = 11;
-const int echoPin = 12;
+const int echoPin = 11;
+const int trigPin = 12;
 const int ledPin = 8;
 
 float distance = 0;
