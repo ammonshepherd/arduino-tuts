@@ -33,6 +33,10 @@ The 10K Ohm resistor acts as a voltage divider. Why is this needed?
 
 > [https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/circuit-1c-photoresistor](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/circuit-1c-photoresistor)
 
+Since the 10K Ohm resistor is a constant resistance, and the voltage in is known, then the Arduino is able to detect the change in voltage because of the changing photoresistor's resistance. It uses this formula: `Voltage out = 5V input * (10K Ohm / (10K Ohm + photoresistor resistance) )`
+
+As the photoresistor's resistance increases, the output voltage decreases. As the photoresistor's resistance decreases, the output voltage increases. This change in voltage is what the Arduino can detect.
+
 ## Arduino code
 
 [Arduino code](arduinoToProcessingPhotoresistor/arduinoToProcessingPhotoresistor.ino)
