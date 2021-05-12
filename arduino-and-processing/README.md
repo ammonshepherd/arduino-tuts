@@ -29,3 +29,9 @@ Arduino.
 And a slightly more advanced example of sending data from Processing to Arduino.
 
 - [Processing to Arduino with 5 LEDs](processing-to-arduino-5-leds.md)
+
+## Processing ⇔ Arduino
+
+Sending data in both directions simultaneous is as simple as combining both of the basic examples from above.
+
+- [Processing & Arduino - Bi-directional](processing-arduino-bi-directional.md)
