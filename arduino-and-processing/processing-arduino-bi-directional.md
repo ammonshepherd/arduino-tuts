@@ -1,10 +1,10 @@
 # Processing ⇔ Arduino
 
-![Processing & Arduino - bi-directional](processing-arduino-bi-directional.png)
+![Processing & Arduino - bi-directional](resources/processing-arduino-bi-directional.png)
 
 This example will show you how to send and receive data from Arduino and Processing.
 
-![Processing & Arduino Photo](tilt-led.jpg)
+![Processing & Arduino Photo](resources/tilt-led.jpg)
 
 The Processing sketch changes background color when the tilt switch is activated. It sends data to Arduino when the mouse button is clicked.
 
@@ -20,9 +20,11 @@ The Arduino sketch turns on an LED when the mouse button is clicked in the Proce
 
 ## Circuit Diagram
 
-![Processing & Arduino Photo](tilt-led_bb.png)
+![Processing & Arduino Photo](resources/tilt-led_bb.png)
 
 ## Processing Code
+
+[Processing Code](processing_bi_directional/processing_bi_directional.pde)
 
 This code is pretty simple. It sends a "1" to the Serial port if a mouse is
 clicked, otherwise it sends a "0". It also listens for incoming data on the
@@ -67,6 +69,8 @@ void serialEvent(Serial p) {
 The only new bit of code here is the `serialValue.charAt(0)`. Remember, the data coming from the Serial port are of type String. Comparing the data from the serial port to a string like so `serialValue == "1"` doesn't work, but taking the first character (type char) of the String and comparing that to a char `== '1'` (notice the single quotes not double) does work.
 
 ## Arduino Code
+
+[Arduino Code](arduino-bi-directional/arduino-bi-directional.ino)
 
 This code is also simple. The tilt switch is just a basic switch. It is activated when tilted. On the inside, little balls connect or not depending on how it is tilted, and this open and closes the switch. We use a 10K Ohm resistor as a pick-up resistor. Without the resistor, the Arduino would read the value of the pin inconsistently due to ambient electrical frequencies from other electronics and the Arduino itself. The resistor "forces" the off state to be off.
 
