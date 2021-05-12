@@ -18,7 +18,7 @@ Let's use a distance sensor and a photoresistor.
 
 ## Circuit Diagram
 
-![Photoresistor and Distance Sensor Circuit](resources/photresistor-distance-sensor.png)
+![Photoresistor and Distance Sensor Circuit](resources/photoresistor-distance-sensor.png)
 
 ## Arduino Code
 
