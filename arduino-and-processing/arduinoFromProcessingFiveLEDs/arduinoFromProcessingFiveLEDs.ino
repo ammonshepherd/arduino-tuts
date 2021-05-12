@@ -1,3 +1,15 @@
+/***************************************
+ * arduinoToProcessingFiveLEDs
+ * 
+ * Send to and receive from Processing
+ * over the Serial port.
+ * 
+ * author: Ammon Edwin Shepherd
+ * date: 12 May 2021
+ * license: MIT License
+ * https://github.com/ammonshepherd/arduino-tuts/blob/master/LICENSE
+ ****************************************/
+
 int RED = 13;
 int YEL = 12;
 int GRE = 11;
