@@ -10,11 +10,11 @@
  * https://github.com/ammonshepherd/arduino-tuts/blob/master/LICENSE
  ****************************************/
 
-int RED = 13;
-int YEL = 12;
+int RED = 9;
+int YEL = 10;
 int GRE = 11;
-int BLU = 10;
-int WHI = 9;
+int BLU = 12;
+int WHI = 13;
 
 void setup() {
   pinMode(RED, OUTPUT);
