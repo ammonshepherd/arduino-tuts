@@ -4,6 +4,8 @@
 
 This is a bit more advanced tutorial than the [Arduino to Processing](arduino-to-processing.md) tutorial. This adds a circuit with a photoresistor to send "real world" data to Processing.
 
+![Arduino Photoresistor Circuit](resources/arduino-photoresistor.jpg)
+
 ## Circuit Components
 
 - 1x photoresistor
@@ -12,14 +14,12 @@ This is a bit more advanced tutorial than the [Arduino to Processing](arduino-to
 
 ## Circuit Diagram
 
-![Photoresistor diagram](resources/photoresistor.png)
+![Photoresistor diagram](resources/photoresistor_bb.png)
 
 Connect one end of the photoresistor to 5V on the Arduino.
 Connect the other end of the photoresistor to analog pin 0, AO, on the Arduino.
 Connect the end of the photoresistor connected to pin A0 to one side of a 10K Ohm resistor.
 Connect the other end of the 10K Ohm resistor to ground, GND, on the Arduino.
-
-![Arduino Photoresistor Circuit](resources/arduino-photoresistor.jpg)
 
 The 10K Ohm resistor acts as a voltage divider. Why is this needed?
 
@@ -33,7 +33,15 @@ The 10K Ohm resistor acts as a voltage divider. Why is this needed?
 
 > [https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/circuit-1c-photoresistor](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/circuit-1c-photoresistor)
 
-Since the 10K Ohm resistor is a constant resistance, and the voltage in is known, then the Arduino is able to detect the change in voltage because of the changing photoresistor's resistance. It uses this formula: `Voltage out = 5V input * (10K Ohm / (10K Ohm + photoresistor resistance) )`
+Since the 10K Ohm resistor is a constant resistance, and the "voltage in" is
+known, then the Arduino is able to detect the change in voltage because of the
+changing photoresistor's resistance. It uses this formula: `Voltage out = 5V input * (10K Ohm / (10K Ohm + photoresistor resistance) )`
+
+![Voltage Divider formula pictures](resources/voltageDividerFormula.png)
+
+or generically written in standard format:
+
+![Voltage Divider formula standard](resources/voltage_divider_formula.png)
 
 As the photoresistor's resistance increases, the output voltage decreases. As the photoresistor's resistance decreases, the output voltage increases. This change in voltage is what the Arduino can detect.
 
