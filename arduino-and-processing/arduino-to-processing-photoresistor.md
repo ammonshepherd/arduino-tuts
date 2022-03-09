@@ -103,7 +103,7 @@ void serialEvent(Serial p) {
 
 The processing code is a bit more intense. Start by importing the serial libraries
 
-`java import processing.serial.*;`
+`import processing.serial.*;`
 
 Then create a new Serial object and a new float variable
 
@@ -114,16 +114,16 @@ float sensorValue;
 
 In the `setup()` function, we create the size of the display window,
 
-`java size(640, 360);`
+`size(640, 360);`
 
 and connect the serial object to the serial port we need to use
-`java serialObject = new Serial(this, Serial.list()[3], 9600);`
+`serialObject = new Serial(this, Serial.list()[3], 9600);`
 
 Remember, you can get the correct number to use in the `Serial.list()[#]` part by going to the Tools menu in the Arduino IDE, then the Port menu. Find the port for the Arduino, and count from the top of the list starting at zero. If you have a list of three ports, the first one is 0, the second is 1, and the third in the list is 2.
 
 Finally, we'll call the `bufferUntil()` method to specify how to break up the data from the serial port. In this case we use the ASCII code for a line feed, which is the digit 10.
 
-`java serialObject.bufferUntil(10); // 10 is ASCII code for line feed`
+`serialObject.bufferUntil(10); // 10 is ASCII code for line feed`
 
 Next, in the `draw()` function we start creating a circle by setting the background color to black, `background(0)`, then the outline to white, `stroke(255)`, and the width of the outline to 2 pixels, `strokeWeight(2)`.
 
@@ -137,7 +137,7 @@ The map function format is like this:
 
 So the code to convert the sensor value into a number that can be used for color and size looks like this
 
-`java float mappedValue = map(sensorValue, 70, 600, 0, 255);`
+`float mappedValue = map(sensorValue, 70, 600, 0, 255);`
 
 Now we can use that value in the `fill()` and `ellipse()` functions.
 
