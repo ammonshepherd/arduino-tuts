@@ -45,7 +45,8 @@ or generically written in standard format:
 
 As the photoresistor's resistance increases, the output voltage decreases. As the photoresistor's resistance decreases, the output voltage increases. This change in voltage is what the Arduino can detect.
 
-<iframe src="https://www.desmos.com/calculator/3ghshwlkc7?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+Check out the relationship between the photoresistor and the output voltage
+with this [interactive graph](https://www.desmos.com/calculator/3ghshwlkc7).
 
 
 ## Arduino code
