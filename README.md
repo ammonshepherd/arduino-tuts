@@ -11,7 +11,8 @@ various sensors and physical components.
 - [06 - Button and servo](button-servo-mover)
 - [07 - Distance sensor and motor](distance-sensor-motor)
 - [08 - DHT11 sensor and LCD](temp-sensor-lcd-display)
-- [09 - Arduino and Processing](arduino-and-processing)
+- [09 - Photo/Buzzer/Button/Servo](photo-buzzer-button-servo)
+- [10 - Arduino and Processing](arduino-and-processing)
 
 # Basic set up
 
