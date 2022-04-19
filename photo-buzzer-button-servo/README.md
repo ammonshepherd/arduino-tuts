@@ -1,4 +1,4 @@
-# Photoresistor => Buzzer && Button => Motor
+# Photoresistor => Buzzer && Button => Servo
 
 This tutorial creates a circuit with two separate functions.
   - The photoresistor is used to play a tune on the buzzer based on a certain light level
